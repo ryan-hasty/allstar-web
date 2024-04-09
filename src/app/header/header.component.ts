@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
 
 @Component({
@@ -13,8 +13,9 @@ import {NgIf, NgOptimizedImage} from "@angular/common";
 })
 export class HeaderComponent {
 
-  isNavVisible: boolean = true;
-  toggleNavVisibility() {
-    this.isNavVisible = !this.isNavVisible;
+  isNavMenuOn: boolean = true;
+
+  toggleNavVisibility(): void {
+    this.isNavMenuOn = !this.isNavMenuOn;
   }
 }

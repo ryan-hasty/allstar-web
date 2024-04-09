@@ -1,18 +1,44 @@
-<div class="w-full mt-8 flex justify-start items-center relative"> <!-- Change absolute to relative -->
-  <img class="inline w-1/2 h-1/6" src="./assets/allstar.jpg" alt="Allstar Logo">
-  <div class="z-50 mb-3 w-2/5 h-1 bg-[#F50000] flex items-center justify-center">
-    <button (click)="toggleNavVisibility()"><img *ngIf="!isNavVisible" class="fixed top-9 right-3 w-8" src="./assets/hamburger.png"></button>
-  </div>
+
+<!--BACKGROUND HOME (IF NAV IS CLOSED)-->
+<div *ngIf="!isNavMenuOn" class="w-full mt-8 flex justify-start items-center" >
+
+  <!--AllStar Logo-->
+  <img class="w-1/2 h-1/6 top-3 absolute" src="./assets/allstar.jpg" alt="Allstar Logo">
+
+  <!--Red Line-->
+  <div class="z-50 mb-3 w-2/5 h-1 bg-[#F50000] flex items-center justify-center absolute top-20 right-10"></div>
+
+  <!--Hamburger Menu-->
+  <button (click)="toggleNavVisibility()"><img class="fixed top-9 right-3 w-8" src="./assets/hamburger.png" alt="Hamburger Menu Button"></button>
 </div>
 
+<!--BACKGROUND HOME (IF NAV IS OPEN)-->
+<div *ngIf="isNavMenuOn" class="w-full mt-8 flex justify-start items-center duration-300" >
+  <!-- White box behind logo -->
+  <div class="bg-white w-1/2 top-0 h-1/6 inline-block fixed">
+    <!--AllStar Logo-->
+    <img class="w-1/2 h-1/6 top-3 inline-block fixed" src="./assets/allstar.jpg" alt="Allstar Logo">
+  </div>
 
-<div [class.translate-x-full]="!isNavVisible" [class.translate-x-0]="isNavVisible" class="fixed mt-0 top-0 right-0 w-2/5 h-screen bg-blue-950 text-white duration-300"> <!-- Change fixed to absolute -->
+  <!--Red Line-->
+  <div class="z-40 w-2/5 mb-3 h-1 bg-[#F50000] flex items-center justify-center fixed top-20 right-10"></div>
+</div>
+
+<!-- NAVIGATION MENU -->
+<!-- Navbar Control-->
+<div [class.translate-x-full]="!isNavMenuOn" [class.translate-x-0]="isNavMenuOn" class="fixed mt-0 top-0 right-0 w-2/5 h-screen bg-blue-950 text-white duration-300">
+
+  <!--Menu Items-->
   <ul class="flex flex-col justify-left text-2xl ml-2 gap-3 w-.75 font-sans text-[#3E5582] font-bold">
+
+    <!--How Can We Help You?-->
     <li class="mt-5 text-white font-normal">
       <div class="text-sm inline pr-9">HOW CAN</div>
       <button (click)="toggleNavVisibility()" ><img class="absolute top-8 right-2 w-8" src="./assets/close.png" alt="Close Window Button"></button>
       <div class="text-sm">WE HELP?</div>
     </li>
+
+    <!--About / Contact / FAQ-->
     <div class="inline"></div>
     <li>ABOUT</li>
     <li>CONTACT</li>
