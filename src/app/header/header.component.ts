@@ -13,7 +13,7 @@ import {NgIf, NgOptimizedImage} from "@angular/common";
 })
 export class HeaderComponent {
 
-  isNavMenuOn: boolean = true;
+  isNavMenuOn: boolean = false;
 
   toggleNavVisibility(): void {
     this.isNavMenuOn = !this.isNavMenuOn;
