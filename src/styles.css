@@ -2,3 +2,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Optional: include DaisyUI theme if you want to customize */
+/*@apply daisyui;*/
+/*@tailwind screens;*/
+
+/* styles.css */
+
+.html, .body{
+  min-height: 100%;
+}
+.hide-on-desktop{
+  /* re-enable display none before finishing*/
+  display: none;
+}
+
+.hide-on-mobile{
+  display: none;
+}
+
+.right-line{
+  right: 12%;
+}
+
+.flex-horizontal-desktop{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 32%;
+  margin-top: 5%;
+}

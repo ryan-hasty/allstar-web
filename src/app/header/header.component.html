@@ -1,47 +1,73 @@
 
-<!--BACKGROUND HOME (IF NAV IS CLOSED)-->
-<div *ngIf="!isNavMenuOn" class="w-full mt-8 flex justify-start items-center" >
+<!-- NORMAL -->
+<!--<div class="flex max-w-52 limit-container mt-5">
+  &lt;!&ndash;  Allstar Logo &ndash;&gt;
+  <img class="z-30 top-3" src="./assets/allstar.jpg" alt="Allstar Logo">
+  &lt;!&ndash;Red Line&ndash;&gt;
+  <div class="z-10 mb-3 w-4/5 h-1 bg-[#F50000] absolute top-20 right-line"></div>
+</div>-->
 
-  <!--AllStar Logo-->
-  <img class="w-1/2 h-1/6 top-3 absolute" src="./assets/allstar.jpg" alt="Allstar Logo">
-
+<div class="flex max-w-52 mt-24 xl:mb-32 xl:mt-5">
+  <!--  Allstar Logo -->
+  <img class="z-30 top-3 max-w-xs max-h-32 fixed lg:absolute" src="./assets/allstar.jpg" alt="Allstar Logo">
   <!--Red Line-->
-  <div class="z-50 mb-3 w-2/5 h-1 bg-[#F50000] flex items-center justify-center absolute top-20 right-10"></div>
-
-  <!--Hamburger Menu-->
-  <button (click)="toggleNavVisibility()"><img class="fixed top-9 right-3 w-8" src="./assets/hamburger.png" alt="Hamburger Menu Button"></button>
+  <div class="z-10 mb-3 w-4/5 h-1 bg-[#F50000] fixed lg:absolute top-20 right-line"></div>
 </div>
-
-<!--BACKGROUND HOME (IF NAV IS OPEN)-->
-<div *ngIf="isNavMenuOn" class="w-full mt-8 flex justify-start items-center duration-300" >
-  <!-- White box behind logo -->
-  <div class="bg-white w-screen top-0 h-1/5 inline-block fixed">
-    <!--AllStar Logo-->
-    <img class="w-1/2 h-1/6 top-3 inline-block fixed" src="./assets/allstar.jpg" alt="Allstar Logo">
-  </div>
-
-  <!--Red Line-->
-  <div class="z-40 w-2/5 mb-3 h-1 bg-[#F50000] flex items-center justify-center fixed top-20 right-10"></div>
-</div>
-
-<!-- NAVIGATION MENU -->
-<!-- Navbar Control-->
-<div [class.translate-x-full]="!isNavMenuOn" [class.translate-x-0]="isNavMenuOn" class="fixed mt-0 top-0 right-0 w-2/5 h-screen bg-blue-950 text-white duration-300">
-
-  <!--Menu Items-->
-  <ul class="flex flex-col justify-left text-2xl ml-2 gap-3 w-.75 font-sans text-[#3E5582] font-bold">
-
-    <!--How Can We Help You?-->
-    <li class="mt-5 text-white font-normal">
-      <div class="text-sm inline pr-9">HOW CAN</div>
-      <button (click)="toggleNavVisibility()" ><img class="absolute top-8 right-2 w-8" src="./assets/close.png" alt="Close Window Button"></button>
-      <div class="text-sm">WE HELP?</div>
+<!-- Desktop Menu Items -->
+<div class="hidden md:block">
+  <ul class="z-40 flex justify-end -mt-28 mr-60 text-2xl gap-20 w-.75 font-sans text-[#D9D9D9] font-bold">
+    <li>
+      <a href="#">
+        ABOUT
+      </a>
     </li>
-
-    <!--About / Contact / FAQ-->
-    <div class="inline"></div>
-    <li>ABOUT</li>
-    <li>CONTACT</li>
-    <li>FAQ</li>
+    <li>
+      <a href="#">
+        CONTACT
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        FAQ
+      </a>
+    </li>
   </ul>
+</div>
+
+<div class="block md:hidden">
+<!--BACKGROUND HOME (IF NAV IS CLOSED)-->
+
+    <!--Hamburger Menu-->
+  <button (click)="toggleNavVisibility()"><img class="fixed top-9 right-3 w-8" src="./assets/hamburger.png" alt="Hamburger Menu Button"></button>
+<!-- NAVIGATION MENU -->
+    <!-- Navbar Control-->
+  <div [class.translate-x-full]="!isNavMenuOn" [class.translate-x-0]="isNavMenuOn" class="fixed mt-0 top-0 right-0 w-2/5 h-full bg-blue-950 text-white duration-300">
+
+    <!--Menu Items-->
+    <ul class="flex flex-col justify-left text-2xl ml-2 gap-3 w-.75 font-sans text-[#3E5582] font-bold">
+
+      <!--How Can We Help You?-->
+      <li class="mt-5 text-white font-normal">
+        <div class="text-sm inline pr-9">HOW CAN</div>
+        <button (click)="toggleNavVisibility()" ><img class="absolute top-8 right-2 w-8" src="./assets/close.png" alt="Close Window Button"></button>
+        <div class="text-sm">WE HELP?</div>
+      </li>
+      <!--About / Contact / FAQ-->
+      <li>
+        <a href="#">
+          ABOUT
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          CONTACT
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          FAQ
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
