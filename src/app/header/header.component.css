@@ -1,3 +1,7 @@
 .about-line-position{
-  right: 13%;
+  right: 8%;
+}
+
+.priority{
+  z-index: 999;
 }
